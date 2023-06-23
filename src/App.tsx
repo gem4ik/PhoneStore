@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './App.css';
 
 function App() {
@@ -7,6 +7,9 @@ function App() {
       <header className="App-header">
         HEADER
       </header>
+        <footer>
+
+        </footer>
     </div>
   );
 }
