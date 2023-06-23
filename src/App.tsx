@@ -1,27 +1,21 @@
 import s from './App.module.css';
+import {Footer} from "./components/Footer/Footer";
+import {Header} from "./components/Header/Header";
 
 function App() {
     return (
         <div className={s.AppWrapper}>
-            <header className={s.header}>
-                <div className={s.headerTop}>
-                    HEADER TOP
-                </div>
-                <div className={s.headerBot}>
-                    HEADER BOT
-                </div>
-            </header>
+            <Header/>
             <main className={s.mainWrapper}>
                 <nav className={s.nav}>
+
                     Nav Bar
                 </nav>
                 <div>
                     Main content
                 </div>
             </main>
-            <footer className={s.footer}>
-                Footer
-            </footer>
+            <Footer/>
         </div>
     );
 }
