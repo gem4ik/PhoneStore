@@ -1,9 +1,9 @@
 import React from 'react';
-import s from "../Main.module.css";
+import s from "./MainNav.module.css";
 
 export const MainNav = () => {
     return (
-        <nav className={s.nav}>
+        <nav className={s.navWrapper}>
             <span>Чекбокс нличия</span>
             <span>Фильтр цены и чекбоксы с популярными ценовыми дипозонами</span>
             <span>поиск по модели и чекбоксы с брендом</span>

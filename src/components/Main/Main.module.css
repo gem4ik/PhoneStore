@@ -1,5 +1,7 @@
 .mainWrapper  {
     display: flex;
-    height: 100%;
     align-items: center;
+    height: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
 }

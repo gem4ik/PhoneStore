@@ -1,7 +1,27 @@
-import React from 'react';
 import {v1} from "uuid";
 
-const initialState = [
+type initialStateType =  {
+    id: string,
+    brand: string,
+    model: string,
+    screenSize: string,
+    batteryLife: string,
+    price: number,
+    os: string
+}
+export type ExtendedPhonesType = {
+    id: string,
+    brand: string,
+    model: string,
+    screenSize: string,
+    batteryLife: string,
+    price: number,
+    os: string,
+    availability: boolean,
+    discount: number,
+}
+
+const initialState: initialStateType[] = [
     {id:v1(),brand: "Apple", model: "iPhone 12", screenSize: "6.1 inches", batteryLife: "17 hours", price: 799, os: "iOS" },
     {id:v1(),brand: "Samsung", model: "Galaxy S21", screenSize: "6.2 inches", batteryLife: "15 hours", price: 699, os: "Android" },
     {id:v1(),brand: "OnePlus", model: "9", screenSize: "6.55 inches", batteryLife: "11 hours", price: 729, os: "Android" },
@@ -100,18 +120,16 @@ const initialState = [
 ]
 
 ////----------------------------------------------------------------------------------------------------------------------
-let randomBoolAilability = Math.random() < 0.5;
-let randomBoolSale = Math.floor(Math.random()*20) + 5;
-
-
-const Extendedfonts=initialState.map(el=>{
-   return  {...el,availability:randomBoolAilability,sale:randomBoolSale}
+const extendedPhones: ExtendedPhonesType[] = initialState.map(el=>{
+   return  {...el,
+       availability : Math.random() >= 0.5
+       ,discount : Math.floor(Math.random()*20) + 5
+   }
 })
-console.log(Extendedfonts)
     ///Расширение стейта новыми ключами Наличия и скидки
 ///---------------------------------------------------------------------------------------------------------------------
 
-export const PhoneReducer = (state: any = initialState, action: any) => {
+export const PhoneReducer = (state: ExtendedPhonesType[] = extendedPhones, action: any) => {
     switch (action.type) {
         case 'sfdgsd' :{
             return state

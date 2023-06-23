@@ -1,16 +1,12 @@
-
-
-
 .AppWrapper {
-  height: 100vh;
   display: flex;
+  height: 100vh;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  width: auto;
+.mainWrapper{
+  max-width: 1280px;
+  height: 100%;
+  background-color: cyan;
 }
-

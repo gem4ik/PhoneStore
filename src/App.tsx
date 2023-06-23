@@ -7,7 +7,9 @@ function App() {
     return (
         <div className={s.AppWrapper}>
             <Header/>
-            <Main/>
+            <div className={s.mainWrapper}>
+                <Main/>
+            </div>
             <Footer/>
         </div>
     );
