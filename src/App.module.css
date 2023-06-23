@@ -13,11 +13,4 @@
   margin: 0;
   width: auto;
 }
-.mainWrapper  {
-  display: flex;
-  height: 100%;
-  align-items: center;
-}
-.nav{
-  width: 200px;
-}
+
