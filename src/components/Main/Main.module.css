@@ -1,7 +1,10 @@
 .mainWrapper  {
     display: flex;
-    align-items: center;
     height: 100%;
     padding-right: 20px;
     padding-left: 20px;
+    background-color: cyan;
+    max-width: 1280px;
+    width: 100%;
+    justify-content: space-evenly;
 }
