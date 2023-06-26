@@ -7,7 +7,7 @@ export const Footer = () => {
            <div className={s.footerWrapper}>
                <span>Соцсети</span>
                <span>Ссылка на Git</span>
-               <span>Создатели</span>
+               <span>creatOrs</span>
                <span>Другая информация</span>
            </div>
         </footer>
