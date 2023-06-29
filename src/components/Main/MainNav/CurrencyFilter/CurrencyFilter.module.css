@@ -1,0 +1,20 @@
+.priceFilterWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    justify-content: center;
+    gap: 20px;
+}
+
+.inputWrapper {
+    display: flex;
+    gap: 10px;
+    margin-inline: 10px;
+}
+
+.inputWrapper input {
+    width: 100%;
+}
+.priceFilterWrapper button {
+    margin-inline: 10px;
+}

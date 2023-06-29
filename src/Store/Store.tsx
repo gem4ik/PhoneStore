@@ -19,4 +19,6 @@ const rootReducer = combineReducers({
     osFilter: osFilterReducer,
 });
 
+export type RootStateType = ReturnType<typeof rootReducer>
+
 export const store = createStore(rootReducer)

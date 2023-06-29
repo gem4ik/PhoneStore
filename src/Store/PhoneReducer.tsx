@@ -141,7 +141,7 @@ export const inStockFilterReducer = (state = false, action: FilterAction) => {
             return state;
     }
 };
-export const priceFilterReducer = (state = { min: 0, max: Infinity }, action : FilterAction) => {
+export const priceFilterReducer = (state: PriceFilterStateType = { min: 100, max: 5000 }, action : FilterAction) => {
     switch (action.type) {
         case 'SET_PRICE_FILTER':
             return action.payload;
@@ -235,3 +235,8 @@ export type FilterAction =
     | ReturnType<typeof setBatteryLifeFilterAC>
     | ReturnType<typeof addOsToFilterAC>
     | ReturnType<typeof removeOsFromFilterAC>
+
+export type PriceFilterStateType = {
+    min: number
+    max: number
+}
