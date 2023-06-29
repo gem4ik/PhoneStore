@@ -21,6 +21,11 @@ export type ExtendedPhonesType = {
     discount: number,
 }
 
+// export const fetchData = axios.get(
+//     'https://api.bestbuy.com/click/5592e2b895800000/12345678/pdp'
+// )
+// console.log(fetchData)
+
 const initialState: initialStateType[] = [
     {id:v1(),brand: "Apple", model: "iPhone 12", screenSize: "6.1 inches", batteryLife: "17 hours", price: 799, os: "iOS" },
     {id:v1(),brand: "Samsung", model: "Galaxy S21", screenSize: "6.2 inches", batteryLife: "15 hours", price: 699, os: "Android" },
