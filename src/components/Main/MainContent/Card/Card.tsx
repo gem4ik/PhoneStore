@@ -14,18 +14,50 @@ export const Card = (props: CardPropsType) => {
     return (
         <div className={s.card}>
 
-            <img className={s.imgProduct} src="https://alldect.ru/images/stories/virtuemart/product/spektr_308.jpg"
-                 alt="PhoneIMG"/>
-            <div className={s.infoCard}>
-                <span>{`${productParam.brand} ${productParam.model}`}</span>
-                <span>Наличие<UniversalCheckBox callback={()=>{}} checkedStatus={productParam.availability}/></span> <span>Сравнить<UniversalCheckBox callback={()=>{}} checkedStatus={false}/></span>
+
+            <div className={s.imgContainer}>
+                <img className={s.imgProduct} src="https://pngicon.ru/file/uploads/krasnyy-telefon.png" alt="PhoneIMG"/>
             </div>
 
-            <div className={s.buyMenuCard}>
-                <span className={s.cardPriceProduct}>Цена: {productParam.price}</span>
-                <span>Избраное<UniversalCheckBox callback={()=>{}} checkedStatus={false}/></span>
-                <UniversalButton nameButton={"Купить"} callback={() => {
-                }}/></div>
+
+
+            <div className={s.infoContainer}>
+
+
+                <h2 className={s.productTitle}>{`${productParam.brand} ${productParam.model}`}</h2>
+
+
+                <div className={s.availability}>
+                    <span>{productParam.availability ? 'В наличии' : 'Нет в наличии'}</span>
+                </div>
+
+
+
+                <div className={s.priceContainer}>
+
+
+                    <span className={s.cardPriceProduct}>Цена: {productParam.price}</span>
+
+
+                    <span className={s.favorite}>
+        <UniversalCheckBox callback={() => {
+        }} checkedStatus={false}/>
+        <label htmlFor="favorite">В избранное</label>
+      </span>
+                </div>
+                <div className={s.actionsContainer}>
+                    <UniversalButton nameButton="Купить" callback={() => {
+                    }}/>
+                    <span className={s.compare}>
+        <UniversalCheckBox callback={() => {
+        }} checkedStatus={false}/>
+        <label htmlFor="compare">Сравнить</label>
+      </span>
+                </div>
+            </div>
+
+
+
         </div>
     );
 };
