@@ -16,7 +16,7 @@ export const Card = (props: CardPropsType) => {
 
 
             <div className={s.imgContainer}>
-                {/*<img className={s.imgProduct} src="https://pngicon.ru/file/uploads/krasnyy-telefon.png" alt="PhoneIMG"/>*/}
+                <img className={s.imgProduct} src="https://pngicon.ru/file/uploads/krasnyy-telefon.png" alt="PhoneIMG"/>
             </div>
 
 
