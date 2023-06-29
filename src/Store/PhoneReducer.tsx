@@ -126,14 +126,112 @@ const extendedPhones: ExtendedPhonesType[] = initialState.map(el=>{
        ,discount : Math.floor(Math.random()*20) + 5
    }
 })
-    ///Расширение стейта новыми ключами Наличия и скидки
-///---------------------------------------------------------------------------------------------------------------------
-
-export const PhoneReducer = (state: ExtendedPhonesType[] = extendedPhones, action: any) => {
+///Расширение стейта новыми ключами Наличия и скидки
+///-------------------------------------reducers------------------------------------------------------------------
+export const phoneReducer = (state: ExtendedPhonesType[] = extendedPhones, action: any) => {
     switch (action.type) {
-        case 'sfdgsd' :{
-            return state
-        }
         default: return state
     }
 };
+export const inStockFilterReducer = (state = false, action: FilterAction) => {
+    switch (action.type) {
+        case 'SET_IN_STOCK_FILTER':
+            return action.payload;
+        default:
+            return state;
+    }
+};
+export const priceFilterReducer = (state = { min: 0, max: Infinity }, action : FilterAction) => {
+    switch (action.type) {
+        case 'SET_PRICE_FILTER':
+            return action.payload;
+        default:
+            return state;
+    }
+};
+export const brandFilterReducer = (state = [], action : FilterAction) => {
+    switch (action.type) {
+        case 'ADD_BRAND_TO_FILTER':
+            return [...state, action.payload];
+        case 'REMOVE_BRAND_FROM_FILTER':
+            return state.filter((brand) => brand !== action.payload);
+        default:
+            return state;
+    }
+};
+export const screenSizeFilterReducer = (state = [], action : FilterAction) => {
+    switch (action.type) {
+        case 'ADD_SCREEN_SIZE_TO_FILTER':
+            return [...state, action.payload];
+        case 'REMOVE_SCREEN_SIZE_FROM_FILTER':
+            return state.filter((size) => size !== action.payload);
+        default:
+            return state;
+    }
+};
+export const batteryLifeFilterReducer = (state = { min: 0, max: Infinity }, action : FilterAction) => {
+    switch (action.type) {
+        case 'SET_BATTERY_LIFE_FILTER':
+            return action.payload;
+        default:
+            return state;
+    }
+};
+export const osFilterReducer = (state = [], action : FilterAction) => {
+    switch (action.type) {
+        case 'ADD_OS_TO_FILTER':
+            return [...state, action.payload];
+        case 'REMOVE_OS_FROM_FILTER':
+            return state.filter((os) => os !== action.payload);
+        default:
+            return state;
+    }
+};
+///------------------------------action creators--------------------------------------------------------
+export const setInStockFilterAC = (inStock :boolean) => ({
+    type: 'SET_IN_STOCK_FILTER',
+    payload: inStock,
+});
+export const setPriceFilterAC = (minPrice: number, maxPrice: number) => ({
+    type: 'SET_PRICE_FILTER',
+    payload: { min: minPrice, max: maxPrice },
+});
+export const addBrandToFilterAC = (brand: string) => ({
+    type: 'ADD_BRAND_TO_FILTER',
+    payload: brand,
+});
+export const removeBrandFromFilterAC = (brand: string) => ({
+    type: 'REMOVE_BRAND_FROM_FILTER',
+    payload: brand,
+});
+export const addScreenSizeToFilterAC = (size: number) => ({
+    type: 'ADD_SCREEN_SIZE_TO_FILTER',
+    payload: size,
+});
+export const removeScreenSizeFromFilterAC = (size: number) => ({
+    type: 'REMOVE_SCREEN_SIZE_FROM_FILTER',
+    payload: size,
+});
+export const setBatteryLifeFilterAC = (minBatteryLife: number, maxBatteryLife: number) => ({
+    type: 'SET_BATTERY_LIFE_FILTER',
+    payload: { min: minBatteryLife, max: maxBatteryLife },
+});
+export const addOsToFilterAC = (os: string) => ({
+    type: 'ADD_OS_TO_FILTER',
+    payload: os,
+});
+export const removeOsFromFilterAC = (os: string) => ({
+    type: 'REMOVE_OS_FROM_FILTER',
+    payload: os,
+});
+///---------------------------------action types----------------------------------------------------------------------------
+export type FilterAction =
+    | ReturnType<typeof setInStockFilterAC>
+    | ReturnType<typeof setPriceFilterAC>
+    | ReturnType<typeof addBrandToFilterAC>
+    | ReturnType<typeof removeBrandFromFilterAC>
+    | ReturnType<typeof addScreenSizeToFilterAC>
+    | ReturnType<typeof removeScreenSizeFromFilterAC>
+    | ReturnType<typeof setBatteryLifeFilterAC>
+    | ReturnType<typeof addOsToFilterAC>
+    | ReturnType<typeof removeOsFromFilterAC>
