@@ -143,7 +143,7 @@ export const priceFilterReducer = (state: PriceFilterStateType = { min: initialM
     }
 };
 
-export const brandFilterReducer = (state = uniqueBrands, action : FilterAction) => {
+export const brandFilterReducer = (state = [], action : FilterAction) => {
     switch (action.type) {
         case 'ADD_BRAND_TO_FILTER':
             return [...state, action.payload];
